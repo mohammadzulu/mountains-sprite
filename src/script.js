@@ -184,7 +184,7 @@ scene.add(camera)
 // const controls = new OrbitControls(camera, canvas)
 // controls.enableDamping = true
 
-window.addEventListener('click', () => 
+window.addEventListener('dblclick', () => 
 {
     const fullscreenElement = document.fullscreenElement || document.webkitFullscreenElement
 
