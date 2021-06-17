@@ -176,7 +176,7 @@ document.addEventListener('mousemove', (event) =>
  */
 // Base camera
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 1, 2000)
-camera.position.z = 3
+camera.position.z = 1000
 
 scene.add(camera)
 
