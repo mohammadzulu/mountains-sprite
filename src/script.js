@@ -165,10 +165,12 @@ window.addEventListener('resize', () =>
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 })
 
-document.addEventListener('mousemove', (event) =>
+document.addEventListener('pointermove', (event) =>
 {
-    mouseX = (event.clientX - windowHalfX) / 100
-    mouseY = (event.clientY - windowHalfY) / 100
+    if(event.isPrimary === false ) return
+
+    mouseX = (event.clientX - windowHalfX)
+    mouseY = (event.clientY - windowHalfY)
 })
 
 /**
@@ -176,7 +178,7 @@ document.addEventListener('mousemove', (event) =>
  */
 // Base camera
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 1, 2000)
-camera.position.z = 300
+camera.position.z = 500
 
 scene.add(camera)
 
@@ -230,11 +232,10 @@ document.body.appendChild(renderer.domElement)
 /**
  * Animate
  */
-const clock = new THREE.Clock()
 
 const tick = () =>
 {
-    const elapsedTime = clock.getElapsedTime() * 0.15
+    const elapsedTime = Date.now() * 0.00015
 
     //Update Particles
     // particles.rotation.y = Math.sin(elapsedTime) * 0.3
