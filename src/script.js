@@ -4,6 +4,14 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import { AnaglyphEffect } from 'three/examples/jsm/effects/AnaglyphEffect.js'
 import * as dat from 'dat.gui'
 
+const playButton = document.getElementById('playButton')
+const pauseButton = document.getElementById('pauseButton')
+const tl = gsap.timeline({ defaults: { ease: "power1.out" } })
+
+tl.to(".text", { y: "0%", duration: 2 })
+tl.to(".slider", { y: "-100%", duration: 1.5, delay: 0.5 })
+tl.to(".intro", { y: "-100%", duration: 1 }, "-=1")
+
 let windowHalfX = window.innerWidth / 2
 let windowHalfY = window.innerHeight / 2
 
@@ -27,9 +35,13 @@ scene.fog = new THREE.FogExp2(0x000000, 0.0008)
 
 // sound
 const sound = new Audio('/sounds/mountains.mp3')
-window.addEventListener('click', (playSound) =>
+playButton.addEventListener('click', () =>
 {
     sound.play()
+})
+pauseButton.addEventListener('click', () =>
+{
+    sound.pause()
 })
 
 /**
@@ -270,10 +282,10 @@ const tick = () =>
     }
 
     // Update camera
-    camera.position.x += ( mouseX - camera.position.x ) * .05;
-	camera.position.y += ( - mouseY - camera.position.y ) * .05;
-
-	camera.lookAt( scene.position );
+    camera.position.x += ( mouseX - camera.position.x ) * .05
+	camera.position.y += ( - mouseY - camera.position.y ) * .05
+	camera.lookAt( scene.position )
+    camera.rotateX += elapsedTime * 20
 
     // Update controls
     // controls.update()

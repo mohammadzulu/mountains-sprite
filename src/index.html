@@ -2,10 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <script src="https://kit.fontawesome.com/edbd603d7b.js" crossorigin="anonymous"></script>
     <title>Galaxy</title>
 </head>
 <body>
+    <div id="playButton">
+        <i class="fas fa-play play"></i>
+    </div>
+    <div id="pauseButton">
+        <i class="fas fa-pause pause"></i>
+    </div>
+    <div class="music">Music: Hans Zimmer - Mountains</div>
+    <div class="intro">
+        <div class="intro-text">
+          <h1 class="hide">
+            <span class="text">Enjoy the Experience</span>
+          </h1>
+        </div>
+      </div>
+      <div class="slider"></div>
     <canvas class="webgl"></canvas>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"
+      integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ=="
+      crossorigin="anonymous"
+    ></script>
 </body>
 </html>

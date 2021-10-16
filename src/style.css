@@ -1,19 +1,196 @@
-*
-{
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
 }
 
 html,
-body
-{
-    overflow: hidden;
+body {
+  font-family: sans-serif;
+  overflow: hidden;
 }
 
-.webgl
-{
-    position: fixed;
-    top: 0;
-    left: 0;
-    outline: none;
+.webgl {
+  position: fixed;
+  top: 0;
+  left: 0;
+  outline: none;
+}
+
+#playButton {
+  height: 23px;
+  width: 23px;
+  display: inline-block;
+  position: absolute;
+  font-size: 20px;
+  color: #fff;
+  bottom: 10px;
+  right: 5px;
+  z-index: 1;
+  padding: 5px;
+  border: 1px solid grey;
+  border-radius: 50%;
+  transition: all 0.3s;
+}
+
+#playButton:hover,
+#playButton:active {
+  color: rgb(172, 255, 190);
+  border-color: #fff;
+}
+
+#pauseButton {
+  height: 23px;
+  width: 23px;
+  display: inline-block;
+  position: absolute;
+  font-size: 20px;
+  color: #fff;
+  bottom: 10px;
+  right: 45px;
+  z-index: 1;
+  padding: 5px;
+  border: 1px solid grey;
+  border-radius: 50%;
+  transition: all 0.3s;
+}
+
+#pauseButton:hover,
+#pauseButton:active {
+  color: rgb(172, 255, 190);
+  border-color: #fff;
+}
+
+.play {
+  margin-left: 4.5px;
+  position: absolute;
+  bottom: 6px;
+}
+
+.pause {
+  margin-left: 3px;
+  position: absolute;
+  bottom: 6px;
+}
+
+.music {
+  position: absolute;
+  font-size: 18px;
+  letter-spacing: 1px;
+  bottom: 17px;
+  right: 86px;
+  color: #fff;
+  z-index: 1;
+}
+
+@media screen and (max-width: 350px) {
+  #playButton {
+    height: 20px;
+    width: 20px;
+    font-size: 17px;
+  }
+
+  #pauseButton {
+    height: 20px;
+    width: 20px;
+    font-size: 17px;
+    right: 40px;
+  }
+
+  .music {
+    font-size: 13px;
+    bottom: 18px;
+    right: 78px;
+  }
+}
+
+@media screen and (min-width: 350px) and (max-width: 474px) {
+  #playButton {
+    height: 21.5px;
+    width: 21.5px;
+    font-size: 18.5px;
+  }
+
+  #pauseButton {
+    height: 21.5px;
+    width: 21.5px;
+    font-size: 18.5px;
+    right: 42.5px;
+  }
+
+  .music {
+    font-size: 16px;
+    bottom: 18px;
+    right: 80px;
+  }
+}
+
+.point {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+}
+
+.intro {
+  background: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+  align-items: center;
+}
+
+.intro-text {
+  color: rgb(233, 233, 233);
+  font-family: "Heebo", sans-serif;
+  font-size: 3rem;
+}
+
+@media screen and (max-width: 364px) {
+  .intro-text {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (min-width: 364px) and (max-width: 730px) {
+  .intro-text {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (min-width: 730px) and (max-width: 1093px) {
+  .intro-text {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (min-width: 1093px) {
+  .intro-text {
+    font-size: 3rem;
+  }
+}
+
+.slider {
+  background: rgb(39, 39, 39);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transform: translateY(100%);
+}
+
+.hide {
+  background: black;
+  overflow: hidden;
+}
+
+.hide span {
+  transform: translateY(100%);
+  display: inline-block;
 }
