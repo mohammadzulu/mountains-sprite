@@ -247,7 +247,7 @@ document.body.appendChild(renderer.domElement)
 
 const tick = () =>
 {
-    const elapsedTime = Date.now() * 0.00015
+    const elapsedTime = Date.now() * 0.00005
 
     //Update Particles
     // particles.rotation.y = Math.sin(elapsedTime) * 0.3
