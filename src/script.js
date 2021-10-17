@@ -53,42 +53,6 @@ const particleTexture1 = textureLoader.load('/textures/particles/4.png')
 const particleTexture2 = textureLoader.load('/textures/particles/1.png')
 // const particleTexture3 = textureLoader.load('/textures/particles/17.png')
 
-/**
- * Fonts
- */
-// const fontLoader = new THREE.FontLoader()
-// fontLoader.load(
-//     '/fonts/helvetiker_regular.typeface.json',
-//     (font) => 
-//     {
-//         const textGeometry = new THREE.TextBufferGeometry(
-//              'Fatima',
-//             {
-//                 font: font,
-//                 size: 0.5,
-//                 height: 0.2,
-//                 curveSegments: 5,
-//                 bevelEnabled: true,
-//                 bevelThickness: 0.03,
-//                 bevelSize: 0.02,
-//                 bevelOffset: 0,
-//                 bevelSegments: 4
-//             }
-//         )
-//         // textGeometry.computeBoundingBox()
-//         // textGeometry.translate(
-//         //    - (textGeometry.boundingBox.max.x - 0.1) * 0.5,
-//         //    - (textGeometry.boundingBox.max.y - 0.1) * 0.5,
-//         //    - (textGeometry.boundingBox.max.z - 0.1) * 0.5
-//         // )
-//         textGeometry.center()
-//         const material = new THREE.MeshMatcapMaterial({ matcap: matcapTexture })
-//         const text = new THREE.Mesh(textGeometry, material)
-//         scene.add(text)
-
-//         }
-//  )
-
 /*
  * Particles
  */
@@ -97,9 +61,9 @@ const particlesGeometry = new THREE.BufferGeometry()
 const vertices = []
 for(let i = 0; i < 10000; i++)
 {
-    const x = Math.random() * 2000 - 1000;
-	const y = Math.random() * 2000 - 1000;
-	const z = Math.random() * 2000 - 1000;
+    const x = Math.random() * 2000 - 1000
+	const y = Math.random() * 2000 - 1000
+	const z = Math.random() * 2000 - 1000
 
 	vertices.push( x, y, z );
 }
@@ -131,9 +95,9 @@ for ( let i = 0; i < parameters.length; i ++ )
 
     // Points
     const particles = new THREE.Points(particlesGeometry, materials[i])
-    particles.rotation.x = Math.random() * 6;
-	particles.rotation.y = Math.random() * 6;
-	particles.rotation.z = Math.random() * 6;
+    particles.rotation.x = Math.random() * 6
+	particles.rotation.y = Math.random() * 6
+	particles.rotation.z = Math.random() * 6
     scene.add(particles)
 }
 
@@ -198,37 +162,6 @@ scene.add(camera)
 // Controls
 // const controls = new OrbitControls(camera, canvas)
 // controls.enableDamping = true
-
-window.addEventListener('dblclick', () => 
-{
-    const fullscreenElement = document.fullscreenElement || document.webkitFullscreenElement
-
-  if (!fullscreenElement)
-  {
-      if (canvas.requestFullscreen)
-      {
-          canvas.requestFullscreen()
-      }
-      else if (canvas.webkitrequestFullscreen)
-      {
-        canvas.webkitrequestFullscreen()
-      }
-      
-  }
-  else
-  {
-      if (document.exitFullscreen)
-      {
-         document.exitFullscreen() 
-      }
-      else if (document.webkitExitFullscreen)
-      {
-        document.webkitEnpmxitFullscreen()
-      }
-      
-  }  
-})
- 
 
 /**
  * Renderer
