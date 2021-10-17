@@ -1,8 +1,7 @@
 import './style.css'
 import * as THREE from 'three'
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import { AnaglyphEffect } from 'three/examples/jsm/effects/AnaglyphEffect.js'
-import * as dat from 'dat.gui'
+
 
 const playButton = document.getElementById('playButton')
 const pauseButton = document.getElementById('pauseButton')
@@ -35,10 +34,12 @@ scene.fog = new THREE.FogExp2(0x000000, 0.0008)
 
 // sound
 const sound = new Audio('/sounds/mountains.mp3')
+
 playButton.addEventListener('click', () =>
 {
     sound.play()
 })
+
 pauseButton.addEventListener('click', () =>
 {
     sound.pause()
@@ -244,10 +245,11 @@ document.body.appendChild(renderer.domElement)
 /**
  * Animate
  */
+const clock = new THREE.Clock()
 
 const tick = () =>
 {
-    const elapsedTime = Date.now() * 0.00005
+    let elapsedTime = clock.getElapsedTime() * 0.02
 
     //Update Particles
     // particles.rotation.y = Math.sin(elapsedTime) * 0.3
